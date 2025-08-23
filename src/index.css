@@ -133,6 +133,11 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Asegurar cursor de mano en botones interactivos */
+button, [role="button"], .cursor-pointer {
+  cursor: pointer;
+}
+
 /* Estilos para navegación sticky */
 .navbar-blur {
   backdrop-filter: blur(10px);
