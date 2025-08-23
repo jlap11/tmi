@@ -118,14 +118,14 @@ export default function HeroSection() {
           {/* Hero Image/Illustration */}
           <div className="mt-12 lg:col-span-5 lg:mt-0">
             <div className="relative">
-              <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 p-8 industrial-gradient">
-                <div className="grid grid-cols-2 gap-4 h-full">
+              <div className="rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 p-4 sm:p-6 lg:p-8 industrial-gradient md:aspect-square">
+                <div className="grid grid-cols-2 gap-3 sm:gap-4">
                   {services.map((service, index) => (
                     <Card key={index} className="industrial-hover">
-                      <CardContent className="flex flex-col items-center justify-center p-4 text-center h-full">
-                        <service.icon className="h-8 w-8 text-primary mb-2" />
-                        <h3 className="font-semibold text-sm mb-1">{service.title}</h3>
-                        <p className="text-xs text-muted-foreground leading-tight">
+                      <CardContent className="flex flex-col items-center justify-center p-3 sm:p-4 text-center">
+                        <service.icon className="h-7 w-7 sm:h-8 sm:w-8 text-primary mb-2" />
+                        <h3 className="font-semibold text-xs sm:text-sm mb-1 text-balance">{service.title}</h3>
+                        <p className="text-[11px] sm:text-xs text-muted-foreground leading-tight text-pretty">
                           {service.description}
                         </p>
                       </CardContent>
@@ -154,7 +154,7 @@ export default function HeroSection() {
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-primary">8</div>
-              <div className="text-sm text-muted-foreground">Industrias especializadas</div>
+              <div className="text-sm text-muted-foreground">Servicios especializados</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-primary">24h</div>
