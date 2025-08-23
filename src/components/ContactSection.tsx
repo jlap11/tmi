@@ -32,9 +32,27 @@ export default function ContactSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    
-    // Simular envío del formulario
-    toast.success('Mensaje enviado correctamente. Nos pondremos en contacto pronto.')
+    // Construir mensaje para WhatsApp con los datos del formulario
+    const text = [
+      'Consulta desde el sitio web',
+      `Nombre: ${formData.name}`,
+      formData.company ? `Empresa: ${formData.company}` : null,
+      `Email: ${formData.email}`,
+      formData.phone ? `Tel: ${formData.phone}` : null,
+      '',
+      'Detalle:',
+      formData.message
+    ]
+      .filter(Boolean)
+      .join('\n')
+
+    const waUrl = `https://wa.me/573115264128?text=${encodeURIComponent(text)}`
+
+    // Abrir WhatsApp con el mensaje
+    window.open(waUrl, '_blank')
+
+    // Notificar al usuario
+    toast.success('Abriendo WhatsApp con tu mensaje...')
     
     // Limpiar formulario
     setFormData({

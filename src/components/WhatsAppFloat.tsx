@@ -24,7 +24,7 @@ export default function WhatsAppFloat() {
   }, [])
 
   const openWhatsApp = () => {
-    const message = encodeURIComponent("Hola, me gustaría obtener más información sobre sus servicios de fabricación de piezas industriales. Muchas gracias.")
+  const message = encodeURIComponent("Hola, estoy interesado en sus servicios.")
     window.open(`https://wa.me/573115264128?text=${message}`, '_blank')
     setShowTooltip(false)
   }
@@ -40,7 +40,7 @@ export default function WhatsAppFloat() {
   if (!isVisible) return null
 
   return (
-    <div className="whatsapp-float">
+  <div className="whatsapp-float">
       {/* Tooltip */}
       {showTooltip && (
         <div className="absolute bottom-16 right-0 mb-2 mr-2 max-w-xs">
@@ -74,7 +74,7 @@ export default function WhatsAppFloat() {
       )}
 
       {/* WhatsApp Button */}
-      <div className="relative">
+      <div className="relative z-10">
         <Button
           onClick={openWhatsApp}
           size="lg"
@@ -85,12 +85,12 @@ export default function WhatsAppFloat() {
         </Button>
 
         {/* Pulse animation */}
-        <div className="absolute inset-0 rounded-full bg-green-600 animate-ping opacity-30"></div>
+        <div className="pointer-events-none absolute inset-0 z-0 rounded-full bg-green-600 animate-ping opacity-30"></div>
 
         {/* Close button */}
         <button
           onClick={hideButton}
-          className="absolute -top-2 -right-2 h-6 w-6 bg-gray-100 rounded-full flex items-center justify-center text-gray-500 hover:text-gray-700 hover:bg-gray-200 transition-colors"
+          className="absolute -top-2 -right-2 z-20 h-6 w-6 bg-gray-100 rounded-full flex items-center justify-center text-gray-500 hover:text-gray-700 hover:bg-gray-200 transition-colors"
         >
           <X className="h-3 w-3" />
         </button>

@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
 import { Button } from '@/components/ui/button'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
-import { List, Phone, MapPin } from '@phosphor-icons/react'
+import { Phone, MapPin } from '@phosphor-icons/react'
+import { Menu } from 'lucide-react'
 
 const navigation = [
   { name: 'Inicio', href: '#inicio' },
@@ -12,7 +13,7 @@ const navigation = [
 ]
 
 interface NavbarProps {
-  activeSection?: string
+  readonly activeSection?: string
 }
 
 export default function Navbar({ activeSection }: NavbarProps) {
@@ -88,15 +89,22 @@ export default function Navbar({ activeSection }: NavbarProps) {
         </div>
 
         {/* Mobile menu button */}
-        <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
-          <SheetTrigger asChild className="lg:hidden">
+        <Sheet open={mobileMenuOpen} onOpenChange={(open) => {
+          setMobileMenuOpen(open)
+          if (open) {
+            document.body.setAttribute('data-menu-open', 'true')
+          } else {
+            document.body.removeAttribute('data-menu-open')
+          }
+        }}>
+      <SheetTrigger asChild className="lg:hidden">
             <Button variant="ghost" size="icon">
-              <List className="h-6 w-6" />
+        <Menu className="h-6 w-6" />
               <span className="sr-only">Abrir menú</span>
             </Button>
           </SheetTrigger>
-          <SheetContent side="right" className="w-full max-w-sm">
-            <div className="flex flex-col space-y-6 mt-6">
+          <SheetContent side="right" className="!w-screen !max-w-none">
+            <div className="flex flex-col space-y-6 mt-6 px-4 sm:px-6">
               {/* Mobile Logo */}
               <div className="flex items-center space-x-3">
                 <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">

@@ -99,13 +99,18 @@
   position: fixed;
   bottom: 2rem;
   right: 2rem;
-  z-index: 1000;
+  z-index: 40; /* por debajo del overlay del Sheet (z-50) */
   transition: all 0.3s ease;
 }
 
 .whatsapp-float:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+}
+
+/* Ocultar botón flotante cuando el menú lateral está abierto */
+body[data-menu-open="true"] .whatsapp-float {
+  display: none;
 }
 
 /* Animaciones industriales suaves */
