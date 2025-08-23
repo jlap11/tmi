@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Permitir todos los archivos CSS y JS
+Allow: /src/
+Allow: *.css
+Allow: *.js
+
+# Sitemap location
+Sitemap: https://ingenieromiguel.com/sitemap.xml
+
+# Crawl delay para ser amigables con los bots
+Crawl-delay: 1
