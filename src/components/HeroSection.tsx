@@ -153,7 +153,7 @@ export default function HeroSection() {
               <div className="text-sm text-muted-foreground">Proyectos completados</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary">8</div>
+              <div className="text-3xl font-bold text-primary">6</div>
               <div className="text-sm text-muted-foreground">Servicios especializados</div>
             </div>
             <div className="text-center">
