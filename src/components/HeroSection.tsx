@@ -27,7 +27,7 @@ const services = [
 ]
 
 const industries = [
-  "Litografía", "Metalmecánica", "Laboratorio", "Alimenticia"
+  "Litografía", "Metalmecánica", "Laboratorio", "Alimenticia", "Troqueles", "Moldes de inyección"
 ]
 
 export default function HeroSection() {

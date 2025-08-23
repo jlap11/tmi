@@ -223,18 +223,28 @@ export default function CatalogSection() {
                 Mostrando {filteredProducts.length} de {products.length} productos
               </div>
               
-              <Sheet open={mobileFiltersOpen} onOpenChange={setMobileFiltersOpen}>
+              <Sheet
+                open={mobileFiltersOpen}
+                onOpenChange={(open) => {
+                  setMobileFiltersOpen(open)
+                  if (open) {
+                    document.body.setAttribute('data-filters-open', 'true')
+                  } else {
+                    document.body.removeAttribute('data-filters-open')
+                  }
+                }}
+              >
                 <SheetTrigger asChild className="lg:hidden">
                   <Button variant="outline" size="sm">
                     <Funnel className="h-4 w-4 mr-2" />
                     Filtros
                   </Button>
                 </SheetTrigger>
-                <SheetContent side="left" className="w-full max-w-sm">
+                <SheetContent side="left" className="!w-screen !max-w-none">
                   <SheetHeader>
                     <SheetTitle>Filtros</SheetTitle>
                   </SheetHeader>
-                  <div className="mt-6">
+                  <div className="mt-6 px-4 sm:px-6">
                     <FilterContent />
                   </div>
                 </SheetContent>
@@ -309,8 +319,8 @@ export default function CatalogSection() {
                         <div className="space-y-2">
                           <h5 className="font-medium text-sm">Especificaciones:</h5>
                           <ul className="text-xs text-muted-foreground space-y-1">
-                            {product.specifications.map((spec, index) => (
-                              <li key={index} className="flex items-start gap-2">
+                            {product.specifications.map((spec) => (
+                              <li key={spec} className="flex items-start gap-2">
                                 <span className="text-accent">•</span>
                                 {spec}
                               </li>

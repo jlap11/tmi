@@ -25,10 +25,12 @@ const navigation = {
     { name: 'Piezas Personalizadas', href: '#catalogo' },
   ],
   industries: [
-    { name: 'Litografía', href: '#catalogo' },
-    { name: 'Metalmecánica', href: '#catalogo' },
-    { name: 'Laboratorio', href: '#catalogo' },
-    { name: 'Alimenticia', href: '#catalogo' },
+  { name: 'Litografía', href: '#catalogo' },
+  { name: 'Metalmecánica', href: '#catalogo' },
+  { name: 'Laboratorio', href: '#catalogo' },
+  { name: 'Alimenticia', href: '#catalogo' },
+  { name: 'Troqueles', href: '#catalogo' },
+  { name: 'Moldes de inyección', href: '#catalogo' },
   ]
 }
 

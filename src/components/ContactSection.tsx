@@ -286,18 +286,8 @@ export default function ContactSection() {
 
                   <div className="flex flex-col sm:flex-row gap-4">
                     <Button 
-                      type="submit" 
-                      className="flex-1 bg-primary hover:bg-primary/90"
-                    >
-                      <PaperPlaneTilt className="h-4 w-4 mr-2" />
-                      Enviar Mensaje
-                    </Button>
-                    
-                    <Button 
-                      type="button"
-                      variant="outline"
-                      onClick={openWhatsApp}
-                      className="flex-1"
+                      type="submit"
+                      className="flex-1 bg-green-600 hover:bg-green-700 text-white"
                     >
                       <WhatsappLogo className="h-4 w-4 mr-2" />
                       Enviar por WhatsApp

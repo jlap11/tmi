@@ -113,6 +113,11 @@ body[data-menu-open="true"] .whatsapp-float {
   display: none;
 }
 
+/* Ocultar botón flotante cuando los filtros móviles están abiertos */
+body[data-filters-open="true"] .whatsapp-float {
+  display: none;
+}
+
 /* Animaciones industriales suaves */
 .industrial-hover {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
